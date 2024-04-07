@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Kicker TabRechner",
+  "version": "1.2",
+  "description": "Tabellenrechner 23/24",
+
+  "browser_action": {
+    "default_title": "Kicker Tabellenrechner"
+  },
+
+  "permissions": [
+    "activeTab",
+    "https://www.kicker.de/bundesliga/tabellenrechner"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts":[
+	{
+	  "matches":[
+		"https://www.kicker.de/bundesliga/tabellenrechner"
+	  ],
+    "js": ["background.js"]
+    }],
+
+
+  "browser_specific_settings": {"gecko": {"id": "{7ab13c54-6e2d-4722-99be-99863468969e}"}}
+}
